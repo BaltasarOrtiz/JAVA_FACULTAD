@@ -4,6 +4,8 @@
  */
 package com.ejercicio2.ejercicio_2.modelos;
 
+import ejercicio_3_excepciones.excepcionesDeportista;
+
 /**
  *
  * @author balta
@@ -13,9 +15,17 @@ public class Deportista {
     private String dni;
     private int numeroJugador;
 
-    public Deportista(String nombre, String dni, int numeroJugador) {
-        this.nombre = nombre;
-        this.dni = dni;
+    public Deportista(String nombre, String dni, int numeroJugador) throws excepcionesDeportista{
+        if(dni.isEmpty()){
+            throw new excepcionesDeportista("El DNI no puede estar vacio");
+        }else{
+            this.dni = dni;
+        }
+        if (nombre.isEmpty()){
+            throw new excepcionesDeportista("El nombre no puede estar vacio");
+        }else{
+            this.nombre = nombre;
+        }
         this.numeroJugador = numeroJugador;
     }
 

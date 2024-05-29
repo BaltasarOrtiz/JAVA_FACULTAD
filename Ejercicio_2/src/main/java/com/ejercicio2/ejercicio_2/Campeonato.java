@@ -3,6 +3,8 @@ import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
 import com.ejercicio2.ejercicio_2.modelos.Deportista;
 import com.ejercicio2.ejercicio_2.modelos.Equipo;
 
+import ejercicio_3_excepciones.excepcionesDeportista;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +15,7 @@ import java.util.List;
 public class Campeonato {
     public static final String SEPARADOR = ",";
 
-    public static List<Deportista>leerArchivo(String nombreArchivo)throws IOException{
+    public static List<Deportista>leerArchivo(String nombreArchivo)throws IOException, excepcionesDeportista{
         BufferedReader bufferLectura = null;
         List<Deportista> datos = new ArrayList<>();
         try {

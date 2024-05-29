@@ -10,6 +10,8 @@ import java.util.Scanner;
 import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
 import com.ejercicio2.ejercicio_2.modelos.Deportista;
 
+import ejercicio_3_excepciones.excepcionesDeportista;
+
 /**
  *
  * @author balta
@@ -19,8 +21,9 @@ public class Ejercicio_2 {
     //Parte del codigo para el metodo main() que debera estar definido en la clase principal.    
     /**
      * @param args the command line arguments
+     * @throws excepcionesDeportista 
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, excepcionesDeportista {
         int cantidadJugadoresFutbol = 5;
         int cantidadJugadoresPinPon = 2;                  
     
