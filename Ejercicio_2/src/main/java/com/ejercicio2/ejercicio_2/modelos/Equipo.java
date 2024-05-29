@@ -32,7 +32,7 @@ public class Equipo implements IDeporte{
     @Override
     public void mostrar() {
         for (Deportista d : equipoActual) {
-            System.out.println(d.getNombre());
+            System.out.println(d);
         }
     }
 
@@ -43,8 +43,4 @@ public class Equipo implements IDeporte{
         }
     }
 
-
-   
-   
-    
 }

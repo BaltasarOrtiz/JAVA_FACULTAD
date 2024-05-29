@@ -33,8 +33,8 @@ public class Ejercicio_2 {
         Scanner scanner = new Scanner(System.in);
         do {
             // Menu de opciones
-            System.out.println("1. Crear Equipos de futbol");
-            System.out.println("2. Crear Equipos de pin pon");
+            System.out.println("1. Mostrar Equipos de futbol");
+            System.out.println("2. Mostrar Equipos de pin pon");
             System.out.println("3. Numerar Equipo de futbol");
             System.out.println("4. Numerar Equipo de pin pon");
             System.out.println("5. Salir");
@@ -45,12 +45,14 @@ public class Ejercicio_2 {
             
             switch (opcion) {
                 case 1:
-                    System.out.println("Equipos de futbol");
+                    System.out.println("Equipos de futbol:");
+                    System.out.println("------------------------");
                     Campeonato.mostrar(ListaEquiposFutbol);
                     System.out.println();
                     break;
                 case 2:
                     System.out.println("Equipos de pin pon");
+                    System.out.println("------------------------");
                     Campeonato.mostrar(ListaEquiposPinPon);
                     System.out.println();
                     break;

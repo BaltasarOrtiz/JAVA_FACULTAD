@@ -45,7 +45,7 @@ public class Deportista {
 
     @Override
     public String toString() {
-        return "Deportista{" + "nombre=" + nombre + ", dni=" + dni + ", numeroJugador=" + numeroJugador + '}';
+        return "Deportista: {" + "nombre=" + nombre + ", dni=" + dni + ", numeroJugador=" + numeroJugador + '}';
     }
     
 }
