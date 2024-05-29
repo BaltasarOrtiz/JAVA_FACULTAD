@@ -15,6 +15,7 @@ public class Campeonato {
     public static final String SEPARADOR = ",";
     private static Random rand = new Random();
 
+
     public static List<Deportista>leerArchivo(String nombreArchivo)throws IOException{
         BufferedReader bufferLectura = null;
         List<Deportista> datos = new ArrayList<>();
@@ -41,6 +42,9 @@ public class Campeonato {
         }
         return datos;
     }
+
+
+    // EQUIPOS DE FUTBOL
     /**
     * Crea los equipos con los datos pasados como parámetro
     * @param datos lista con todos los deportistas inscriptos
@@ -60,6 +64,9 @@ public class Campeonato {
         }
         return equipos;
     }
+
+
+    //EQUIPOS DE PINGPONG
     /**
     Crea los equipos con los datos pasados como parámetro
      * @param datos es una lista con todos los deportitas inscriptos
@@ -78,22 +85,34 @@ public class Campeonato {
         }
         return parejas;
     }
+
+
+
     /**
     * Numera cada integrante del equipo o de la pareja
      * @param datos 
     */
     public static void numerar(List<IDeporte> datos){
+        int contador = 1;
         for (IDeporte d : datos) {
+            System.out.println("Equipo " + contador + ":");
             d.numeroDeportista();
+            System.out.println("------------------------");
+            contador++;
         }
     }
+
     /**
     * Muestra los datos de cada equipo o de cada pareja
      * @param datos
     */
     public static void mostrar(List<IDeporte> datos){
+        int contador = 1;
         for (IDeporte d : datos) {
+            System.out.println("Equipo " + contador + ":");
             d.mostrar();
+            System.out.println("------------------------");
+            contador++;
         }
     }
      

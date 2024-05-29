@@ -11,4 +11,12 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.ejercicio2.ejercicio_2.Ejercicio_2</exec.mainClass>
     </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.4.Final</version>
+    </dependency>
+  </dependencies>
 </project>
