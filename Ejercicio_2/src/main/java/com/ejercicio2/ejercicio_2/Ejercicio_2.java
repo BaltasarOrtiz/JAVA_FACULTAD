@@ -64,6 +64,7 @@ public class Ejercicio_2 {
                     break;
                 case 5:
                     System.exit(0);
+                    scanner.close();
                     break;
                 default:
                     System.out.println("Opción no válida");
