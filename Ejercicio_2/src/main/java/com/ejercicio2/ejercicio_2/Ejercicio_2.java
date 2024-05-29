@@ -27,7 +27,7 @@ public class Ejercicio_2 {
         List<Deportista> datosFutbol = Campeonato.leerArchivo("C:\\Users\\balta\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_2\\src\\main\\java\\com\\ejercicio2\\ejercicio_2\\datos\\inscriptosFutbol.csv");
         List<IDeporte> ListaEquiposFutbol = Campeonato.creaEquipos(datosFutbol, cantidadJugadoresFutbol);
         List<Deportista> datosPinPon = Campeonato.leerArchivo("C:\\Users\\balta\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_2\\src\\main\\java\\com\\ejercicio2\\ejercicio_2\\datos\\inscriptosPinPon.csv");
-        List<IDeporte> ListaEquiposPinPon = Campeonato.creaEquipos(datosPinPon, cantidadJugadoresPinPon);
+        List<IDeporte> ListaEquiposPinPon = Campeonato.creaParejas(datosPinPon, cantidadJugadoresPinPon);
 
         int opcion;
         Scanner scanner = new Scanner(System.in);

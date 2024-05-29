@@ -16,6 +16,15 @@ public class Equipo implements IDeporte{
 
     public Equipo(ArrayList<Deportista> equipoActual) { 
         this.equipoActual = equipoActual;
+        asignarNumerosAJugadores();
+    }
+
+    private void asignarNumerosAJugadores() {
+        int numeroJugador = 1;
+        for (Deportista d : equipoActual) {
+            d.setNumeroJugador(numeroJugador);
+            numeroJugador++;
+        }
     }
 
     @Override
