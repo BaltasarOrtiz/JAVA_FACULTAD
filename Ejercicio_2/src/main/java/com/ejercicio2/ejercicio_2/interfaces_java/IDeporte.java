@@ -4,7 +4,8 @@
  */
 package com.ejercicio2.ejercicio_2.interfaces_java;
 import com.ejercicio2.ejercicio_2.modelos.Deportista;
-import java.util.List;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.List;
 public interface IDeporte {
     int CANTIDAD_MINIMA=2;
     
-    public boolean conformar(List<Deportista> integrantes);
+    public boolean conformar(ArrayList<Deportista> integrantes);
     public void mostrar();
     public void numeroDeportista();
     
