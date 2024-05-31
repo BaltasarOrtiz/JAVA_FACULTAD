@@ -23,7 +23,7 @@ public class Ejercicio_2 {
      * @param args the command line arguments
      * @throws excepcionesDeportista 
      */
-    public static void main(String[] args) throws IOException, excepcionesDeportista {
+    public static void main(String[] args) throws excepcionesDeportista, IOException {
         int cantidadJugadoresFutbol = 5;
         int cantidadJugadoresPinPon = 2;                  
     

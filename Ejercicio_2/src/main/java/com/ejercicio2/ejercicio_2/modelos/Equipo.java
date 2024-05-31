@@ -4,6 +4,8 @@
  */
 package com.ejercicio2.ejercicio_2.modelos;
 import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
+import ejercicio_3_excepciones.excepcionesEquipo;
+
 import java.util.ArrayList;
 
 /**
@@ -14,9 +16,12 @@ public class Equipo implements IDeporte{
     private ArrayList<Deportista> equipoActual;
 
 
-    public Equipo(ArrayList<Deportista> equipoActual) { 
+    public Equipo(ArrayList<Deportista> equipoActual) throws excepcionesEquipo{ 
         this.equipoActual = equipoActual;
         asignarNumerosAJugadores();
+        if (equipoActual.size() != 5) {
+            throw new excepcionesEquipo("El tamaño del equipo debe ser exactamente 5");
+        }
     }
 
     private void asignarNumerosAJugadores() {

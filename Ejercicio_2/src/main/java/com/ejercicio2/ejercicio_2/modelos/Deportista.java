@@ -16,12 +16,12 @@ public class Deportista {
     private int numeroJugador;
 
     public Deportista(String nombre, String dni, int numeroJugador) throws excepcionesDeportista{
-        if(dni.isEmpty()){
+        if(dni.isEmpty() || dni.isBlank()){
             throw new excepcionesDeportista("El DNI no puede estar vacio");
         }else{
             this.dni = dni;
         }
-        if (nombre.isEmpty()){
+        if (nombre.isEmpty() || nombre.isBlank()){
             throw new excepcionesDeportista("El nombre no puede estar vacio");
         }else{
             this.nombre = nombre;

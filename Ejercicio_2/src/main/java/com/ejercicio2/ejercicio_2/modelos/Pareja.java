@@ -4,6 +4,9 @@
  */
 package com.ejercicio2.ejercicio_2.modelos;
 import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
+
+import ejercicio_3_excepciones.excepcionesEquipo;
+
 import java.util.ArrayList;
 
 /**
@@ -14,13 +17,16 @@ public class Pareja implements IDeporte{
     private Deportista deportista1;
     private Deportista deportista2;
 
-    public Pareja(Deportista deportista1, Deportista deportista2) {
+    public Pareja(Deportista deportista1, Deportista deportista2) throws excepcionesEquipo{
         this.deportista1 = deportista1;
         this.deportista2 = deportista2;
+        if (deportista1 == null || deportista2 == null) {
+            throw new excepcionesEquipo("Deben haber dos deportistas para conformar una pareja");
+        }
     }
 
     @Override
-    public boolean conformar(ArrayList<Deportista> integrantes) {
+    public boolean conformar(ArrayList<Deportista> integrantes){
         if (integrantes == null || integrantes.size() < CANTIDAD_MINIMA) {
             return false;
         }
