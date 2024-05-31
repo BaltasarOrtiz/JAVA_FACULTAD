@@ -54,8 +54,9 @@ public class Campeonato {
     * @param datos lista con todos los deportistas inscriptos
     * @param cantidadJugadores cantidad de jugadores que conforman un equipo
     * @return una lista de equipos
+     * @throws excepcionesEquipo 
     */
-    public static List<IDeporte> creaEquipos(List<Deportista> datos, int cantidadJugadores) throws excepcionesDeportista{
+    public static List<IDeporte> creaEquipos(List<Deportista> datos, int cantidadJugadores) throws excepcionesDeportista, excepcionesEquipo {
         List<IDeporte> equipos = new ArrayList<>();
         ArrayList<Deportista> equipoActual = new ArrayList<>();
         List<String> dniAsignados = new ArrayList<>();
@@ -65,16 +66,17 @@ public class Campeonato {
                 equipoActual.add(d);
                 dniAsignados.add(d.getDni());
                 if (equipoActual.size() == cantidadJugadores) {
-                    try{
+                    try {
                         Equipo e = new Equipo(equipoActual);
                         equipos.add(e);
                         equipoActual = new ArrayList<>();
-                    }catch (excepcionesEquipo e){
+                    } catch (excepcionesEquipo e) {
                         System.out.println(e.getMessage());
                     }
                 }
             }
         }
+
         return equipos;
     }
 

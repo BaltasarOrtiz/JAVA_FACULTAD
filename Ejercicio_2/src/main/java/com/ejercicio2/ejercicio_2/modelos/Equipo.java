@@ -17,14 +17,14 @@ public class Equipo implements IDeporte{
 
 
     public Equipo(ArrayList<Deportista> equipoActual) throws excepcionesEquipo{ 
+        if (equipoActual.size() < CANTIDAD_MINIMA) {
+            throw new excepcionesEquipo("El tamaño del equipo debe ser al menos 5");
+        }
         this.equipoActual = equipoActual;
         asignarNumerosAJugadores();
-        if (equipoActual.size() != 5) {
-            throw new excepcionesEquipo("El tamaño del equipo debe ser exactamente 5");
-        }
     }
 
-    private void asignarNumerosAJugadores() {
+    private void asignarNumerosAJugadores(){
         int numeroJugador = 1;
         for (Deportista d : equipoActual) {
             d.setNumeroJugador(numeroJugador);
@@ -34,7 +34,6 @@ public class Equipo implements IDeporte{
 
     @Override
     public boolean conformar(ArrayList<Deportista> integrantes) {
-
         if (integrantes == null || integrantes.size() < CANTIDAD_MINIMA) {
             return false;
         }

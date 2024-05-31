@@ -11,6 +11,7 @@ import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
 import com.ejercicio2.ejercicio_2.modelos.Deportista;
 
 import ejercicio_3_excepciones.excepcionesDeportista;
+import ejercicio_3_excepciones.excepcionesEquipo;
 
 /**
  *
@@ -22,8 +23,9 @@ public class Ejercicio_2 {
     /**
      * @param args the command line arguments
      * @throws excepcionesDeportista 
+     * @throws excepcionesEquipo 
      */
-    public static void main(String[] args) throws excepcionesDeportista, IOException {
+    public static void main(String[] args) throws excepcionesDeportista, IOException, excepcionesEquipo {
         int cantidadJugadoresFutbol = 5;
         int cantidadJugadoresPinPon = 2;                  
     
