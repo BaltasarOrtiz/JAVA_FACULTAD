@@ -18,9 +18,7 @@ public class Pareja implements IDeporte{
     private Deportista deportista2;
 
     public Pareja(Deportista deportista1, Deportista deportista2) throws excepcionesEquipo{
-        this.deportista1 = deportista1;
-        this.deportista2 = deportista2;
-        if (deportista1 == null || deportista2 == null) {
+        if (!conformar(new ArrayList<Deportista>(){{add(deportista1); add(deportista2);}})){
             throw new excepcionesEquipo("Deben haber dos deportistas para conformar una pareja");
         }
     }

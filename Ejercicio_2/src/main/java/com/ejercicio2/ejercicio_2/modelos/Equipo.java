@@ -17,10 +17,9 @@ public class Equipo implements IDeporte{
 
 
     public Equipo(ArrayList<Deportista> equipoActual) throws excepcionesEquipo{ 
-        if (equipoActual.size() < CANTIDAD_MINIMA) {
-            throw new excepcionesEquipo("El tamaño del equipo debe ser al menos 5");
+        if (!conformar(equipoActual)) {
+            throw new excepcionesEquipo("No se pudo conformar el equipo");
         }
-        this.equipoActual = equipoActual;
         asignarNumerosAJugadores();
     }
 

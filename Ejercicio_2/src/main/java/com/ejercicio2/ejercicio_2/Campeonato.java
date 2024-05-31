@@ -67,11 +67,11 @@ public class Campeonato {
                 dniAsignados.add(d.getDni());
                 if (equipoActual.size() == cantidadJugadores) {
                     try {
-                        Equipo e = new Equipo(equipoActual);
+                        Equipo e = new Equipo(new ArrayList<>(equipoActual));
                         equipos.add(e);
-                        equipoActual = new ArrayList<>();
-                    } catch (excepcionesEquipo e) {
-                        System.out.println(e.getMessage());
+                        equipoActual.clear();
+                    } catch (excepcionesEquipo ex) {
+                        System.out.println(ex.getMessage());
                     }
                 }
             }
