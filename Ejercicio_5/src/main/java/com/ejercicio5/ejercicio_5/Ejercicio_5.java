@@ -4,6 +4,8 @@
 
 package com.ejercicio5.ejercicio_5;
 
+import com.ejercicio5.ejercicio_5.hilos.MiHilo;
+
 /**
  *
  * @author Baltasar
@@ -11,6 +13,16 @@ package com.ejercicio5.ejercicio_5;
 public class Ejercicio_5 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ConjuntoPalabras datos = new ConjuntoPalabras();
+        Thread h1 = new MiHilo("uno","C:\\Users\\Baltasar\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto1.txt",datos);
+        Thread h2 = new MiHilo("dos","C:\\Users\\Baltasar\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto2.txt",datos);
+        h1.start();
+        h2.start();
+        try {
+            h1.join();
+            h2.join();
+        } catch (InterruptedException e) {
+            System.out.println("Hilo principal interrumpido");
+        }
     }
 }
