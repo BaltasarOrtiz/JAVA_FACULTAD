@@ -33,4 +33,8 @@ public class Palabra {
         this.cantidadVeces = cantidadVeces;
     }
     
+    @Override
+    public String toString(){
+        return "- Palabra: " + "'" + palabra + "'" + " -->" + " Cantidad de veces: " + cantidadVeces;
+    }
 }

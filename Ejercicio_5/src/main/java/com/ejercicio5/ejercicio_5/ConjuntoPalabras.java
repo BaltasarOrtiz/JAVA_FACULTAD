@@ -31,11 +31,15 @@ public class ConjuntoPalabras {
         }
         return "No se encontro la palabra";
     }
-    
-    public void mostrar(){
+
+    public void mostrar() {
+        System.out.println("-------------------------------");
+        System.out.println("Lista de palabras y frecuencias");
+        System.out.println("-------------------------------");
         for (Palabra palabra : palabras) {
-            System.out.println(palabra.toString());
+            System.out.printf("Palabra: %-20s Frecuencia: %d%n", palabra.getPalabra(), palabra.getCantidadVeces());
         }
+        System.out.println("-------------------------------");
     }
     
     public void incrementar(Palabra p){
