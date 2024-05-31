@@ -21,6 +21,12 @@ public class Pareja implements IDeporte{
         if (!conformar(new ArrayList<Deportista>(){{add(deportista1); add(deportista2);}})){
             throw new excepcionesEquipo("Deben haber dos deportistas para conformar una pareja");
         }
+        asignarNumerosAJugadores();
+    }
+
+    public void asignarNumerosAJugadores(){
+        deportista1.setNumeroJugador(1);
+        deportista2.setNumeroJugador(2);
     }
 
     @Override

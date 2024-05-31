@@ -2,6 +2,7 @@ package com.ejercicio2.ejercicio_2;
 import com.ejercicio2.ejercicio_2.interfaces_java.IDeporte;
 import com.ejercicio2.ejercicio_2.modelos.Deportista;
 import com.ejercicio2.ejercicio_2.modelos.Equipo;
+import com.ejercicio2.ejercicio_2.modelos.Pareja;
 
 import ejercicio_3_excepciones.excepcionesDeportista;
 import ejercicio_3_excepciones.excepcionesEquipo;
@@ -87,22 +88,28 @@ public class Campeonato {
      * @param datos es una lista con todos los deportitas inscriptos
      * @return una lista de Parejas formadas
     */
-    public static List<IDeporte> creaParejas(List<Deportista> datos, int cantidadJugadores) throws excepcionesDeportista{
+    public static List<IDeporte> creaParejas(List<Deportista> datos) throws excepcionesDeportista, excepcionesEquipo {
         List<IDeporte> parejas = new ArrayList<>();
-        ArrayList<Deportista> parejaActual = new ArrayList<>();
+        Deportista deportista1 = null;
+        Deportista deportista2 = null;
         List<String> dniAsignados = new ArrayList<>();
     
         for (Deportista d : datos) {
             if (!dniAsignados.contains(d.getDni())) {
-                parejaActual.add(d);
+                if (deportista1 == null) {
+                    deportista1 = d;
+                } else if (deportista2 == null) {
+                    deportista2 = d;
+                }
                 dniAsignados.add(d.getDni());
-                if (parejaActual.size() == cantidadJugadores) {
-                    try{
-                        Equipo e = new Equipo(parejaActual);
-                        parejas.add(e);
-                        parejaActual = new ArrayList<>();
-                    } catch (excepcionesEquipo e){
-                        System.out.println(e.getMessage());
+                if (deportista1 != null && deportista2 != null) {
+                    try {
+                        Pareja p = new Pareja(deportista1, deportista2);
+                        parejas.add(p);
+                        deportista1 = null;
+                        deportista2 = null;
+                    } catch (excepcionesEquipo p) {
+                        System.out.println(p.getMessage());
                     }
                 }
             }
