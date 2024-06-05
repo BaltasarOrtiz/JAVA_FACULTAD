@@ -16,8 +16,8 @@ public class Ejercicio_5 {
         ConjuntoPalabras datos = new ConjuntoPalabras();
 
         long inicio = System.currentTimeMillis();
-        Thread h1 = new MiHilo("uno","C:\\Users\\balta\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto1.txt",datos);
-        Thread h2 = new MiHilo("dos","C:\\Users\\balta\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto2.txt",datos);
+        Thread h1 = new MiHilo("uno","C:\\Users\\Baltasar\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto1.txt",datos);
+        Thread h2 = new MiHilo("dos","C:\\Users\\Baltasar\\Documents\\GitHub\\JAVA_FACULTAD\\Ejercicio_5\\src\\main\\java\\com\\ejercicio5\\ejercicio_5\\datos\\texto2.txt",datos);
         h1.start();
         h2.start();
         try {
