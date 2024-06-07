@@ -12,9 +12,9 @@ public class Palabra {
     private String palabra;
     private int cantidadVeces;
 
-    public Palabra(String palabra, int cantidadVeces) {
+    public Palabra(String palabra) {
         this.palabra = palabra;
-        this.cantidadVeces = cantidadVeces;
+        this.cantidadVeces = 1;
     }
 
     public String getPalabra() {

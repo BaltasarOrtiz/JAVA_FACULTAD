@@ -28,7 +28,6 @@
          }
          // Muestro cada palabra y la cantidad de veces que aparece
          long fin = System.currentTimeMillis();
-         System.out.println();
          datos.mostrar();
          System.out.println();
          System.out.println("Tiempo de ejecucion: " + (fin - inicio) + " milisegundos");
