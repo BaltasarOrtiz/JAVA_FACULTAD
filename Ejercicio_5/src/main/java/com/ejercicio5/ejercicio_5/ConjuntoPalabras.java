@@ -23,13 +23,13 @@ public class ConjuntoPalabras {
         palabras.add(p);
     }
     
-    public String buscarPalabra(String PalabraBuscada){
+    public Palabra buscarPalabra(String PalabraBuscada){
         for (Palabra palabra : palabras) {
             if (palabra.getPalabra().equals(PalabraBuscada)) {
-                return palabra.toString();
+                return palabra;
             }
         }
-        return "No se encontro la palabra";
+        return null;
     }
 
     public void mostrar() {
