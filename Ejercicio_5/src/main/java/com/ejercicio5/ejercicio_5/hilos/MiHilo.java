@@ -5,8 +5,6 @@
 package com.ejercicio5.ejercicio_5.hilos;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import com.ejercicio5.ejercicio_5.ConjuntoPalabras;
@@ -54,22 +52,26 @@ public class MiHilo extends Thread {
         } catch (java.io.IOException e) {
             System.out.println("Error al leer el archivo");
         }
+        texto = texto.toLowerCase();
         texto = limpiarSignos(texto);
         String[] palabras = texto.split(" ");
         palabras = limpiarStopWords(palabras).split(" ");
 
-        // Crear un HashMap para almacenar cada palabra y su frecuencia
-        HashMap<String, Integer> frecuenciaPalabras = new HashMap<>();
+        Palabra p;
         for (String palabra : palabras) {
-            frecuenciaPalabras.put(palabra, frecuenciaPalabras.getOrDefault(palabra, 0) + 1);
+            if (!(palabra.equals(""))) {                
+                synchronized(datos){
+                    p = datos.buscarPalabra(palabra);
+                    if (p==null){
+                        Palabra nuevaPalabra = new Palabra(palabra);
+                        datos.agregarPalabra(nuevaPalabra);
+                    }else{
+                        datos.incrementar(p);
+                    }
+                }
+            }
         }
-
-        // Crear un objeto Palabra para cada palabra y su frecuencia
-        for (Map.Entry<String, Integer> entrada : frecuenciaPalabras.entrySet()) {
-            System.out.println("Hilo " + numeroHilo + ": " + entrada.getKey() + " - " + entrada.getValue());
-            Palabra nuevaPalabra = new Palabra(entrada.getKey(), entrada.getValue());
-            datos.agregarPalabra(nuevaPalabra);
-        }
+        
     }
 
 }
