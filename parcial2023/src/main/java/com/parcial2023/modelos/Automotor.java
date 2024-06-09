@@ -1,7 +1,8 @@
 package com.parcial2023.modelos;
+import com.parcial2023.interfaces.IPrueba;
 import com.parcial2023.interfaces.ITributo;
 
-public class Automotor implements ITributo{
+public class Automotor implements ITributo,IPrueba{
     private String patente;
     private int modelo;
 
@@ -42,4 +43,8 @@ public class Automotor implements ITributo{
         return impuesto;
     }
 
+    @Override
+    public void pruebaInterface() {
+        System.out.println("Prueba automotor");
+    }
 }

@@ -1,8 +1,9 @@
 package com.parcial2023.modelos;
 
+import com.parcial2023.interfaces.IPrueba;
 import com.parcial2023.interfaces.ITributo;
 
-public class Inmueble implements ITributo{
+public class Inmueble implements ITributo,IPrueba{
     private String numCatastral;
     private float superficie;
     private String zona;
@@ -51,5 +52,10 @@ public class Inmueble implements ITributo{
             impuesto = superficie * 5;
         }
         return impuesto;
+    }
+
+    @Override
+    public void pruebaInterface() {
+        System.out.println("Prueba inmueble");
     }
 }

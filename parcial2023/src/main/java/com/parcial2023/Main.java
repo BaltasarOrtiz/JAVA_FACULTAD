@@ -29,5 +29,9 @@ public class Main {
         System.out.println();
         System.out.println("Total inmuebles: ");
         f.megaInmuebles2();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        f.pruebas();
     }
 }

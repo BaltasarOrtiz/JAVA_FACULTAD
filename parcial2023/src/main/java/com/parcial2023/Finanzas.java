@@ -1,4 +1,5 @@
 package com.parcial2023;
+import com.parcial2023.interfaces.IPrueba;
 import com.parcial2023.interfaces.ITributo;
 import com.parcial2023.modelos.Automotor;
 import com.parcial2023.modelos.Inmueble;
@@ -110,4 +111,22 @@ public class Finanzas {
             }
         }
     }
+
+    public void pruebas(){
+        for (ITributo tributo : tributos){
+            // System.out.println(tributo.getNumCatastral()); 
+            /*
+             Si la lista es del tipo ITributo, no se puede acceder a los metodos de las clases Inmueble y Automotor, solamente a los
+             metodos de la interface, cuyo caso se quiera usar los metodos de las clases Inmueble y Automotor, se debe hacer un cast.
+             */
+            if (tributo instanceof Inmueble){
+               ((Inmueble) tributo).pruebaInterface();
+               ((IPrueba) tributo).pruebaInterface();
+            } else if (tributo instanceof Automotor){
+                ((Automotor) tributo).pruebaInterface();
+                ((IPrueba) tributo).pruebaInterface();
+            }
+        }
+    }
+
 }
