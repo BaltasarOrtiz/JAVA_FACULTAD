@@ -33,5 +33,19 @@ public class Main {
         System.out.println();
         System.out.println();
         f.pruebas();
+
+        /* 
+        @Override
+        public void run(){
+            for (int i = 0; i < cantidadButacas; i++) {
+                int numeroButaca = random.nextInt(cantidadButacas);
+                synchronized(this.butacas){
+                    if (this.butacas.get(numeroButaca) != true){
+                        this.butacas.set(numeroButaca) = true;
+                    }
+                }
+            }
+        }
+        */
     }
 }
